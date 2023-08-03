@@ -5,7 +5,9 @@ This is a solution to the [Interactive Rating Component](https://www.frontendmen
 ### Screenshot
 
 ![mobile](./completed_screenshots/mobile.PNG)
+![mobile submitted](./completed_screenshots/mobile_submitted.PNG)
 ![desktop](./completed_screenshots/desktop.PNG)
+![desktop submitted](./completed_screenshots/desktop_submitted.PNG)
 
 ### Links
 
@@ -31,5 +33,7 @@ Netlify used for deployment.
 - Website - [https://www.andreferreiradev.com/](https://www.andreferreiradev.com/)
 - Frontend Mentor - [https://www.frontendmentor.io/profile/Namonaki0](https://www.frontendmentor.io/profile/Namonaki0)
 - Github - [https://github.com/Namonaki0](https://github.com/Namonaki0)
+
+---
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/971907ea-9a88-462e-a8dd-7b6e64721526/deploy-status)](https://app.netlify.com/sites/fementor-af-interactive-rating/deploys)

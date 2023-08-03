@@ -1,15 +1,10 @@
-let userSelectedRating;
+let userSelectedRating = 0;
 
 document.addEventListener("click", (e) => {
   if (e.target.dataset.rating !== "rating-unit") return;
 
-  if (
-    e.target.dataset.rating === "rating-unit" &&
-    e.target.classList.contains("selected")
-  ) {
-    e.target.classList.remove("selected");
-  } else {
-    e.target.classList.add("selected");
+  if (e.target.dataset.rating === "rating-unit") {
+    e.target.classList.toggle("selected");
 
     userSelectedRating = e.target.innerText;
 
@@ -30,26 +25,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   for (let i = 1; i <= 5; i++) {
     const countElWrapper = document.createElement("div");
-    const countEl = document.createElement("span");
-    countEl.textContent = i;
-    countElWrapper.setAttribute("data-rating", "rating-unit");
+    countElWrapper.dataset.rating = "rating-unit";
     countElWrapper.classList.add("rating-unit");
-    countElWrapper.appendChild(countEl);
+    countElWrapper.innerHTML = `<span>${i}</span>`;
     ratingCounter.append(countElWrapper);
   }
 });
 const form = document.querySelector("form");
 
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const formSubmitBtnWrapper = document.querySelector(".submit-btn-wrapper");
-    const mainWrapper = document.querySelector(".main-wrapper");
-    const formWrapper = document.querySelector(".form-wrapper");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formSubmitBtnWrapper = document.querySelector(".submit-btn-wrapper");
+  const mainWrapper = document.querySelector(".main-wrapper");
+  const formWrapper = document.querySelector(".form-wrapper");
 
-    formSubmitBtnWrapper.style.backgroundColor = "hsl(25, 82%, 28%)";
+  formSubmitBtnWrapper.style.backgroundColor = "hsl(25, 82%, 28%)";
 
-    formSubmitBtnWrapper.innerHTML = `
+  formSubmitBtnWrapper.innerHTML = `
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
@@ -77,13 +69,13 @@ if (form) {
         </svg>
     `;
 
-    setTimeout(() => {
-      formWrapper.style.transform = "translateX(50px)";
-      formWrapper.style.opacity = "0";
-    }, 1800);
+  setTimeout(() => {
+    formWrapper.style.transform = "translateX(50px)";
+    formWrapper.style.opacity = "0";
+  }, 1800);
 
-    setTimeout(() => {
-      mainWrapper.innerHTML = `
+  setTimeout(() => {
+    mainWrapper.innerHTML = `
         <div class="thank-you-wrapper">
             <div class="thank-you-image-wrapper">
                 <img
@@ -101,8 +93,7 @@ if (form) {
             </p>
         </div>
         `;
-      const thankYouWrapper = document.querySelector(".thank-you-wrapper");
-      thankYouWrapper.style.animation = "submitEffect 150ms linear";
-    }, 2000);
-  });
-}
+    const thankYouWrapper = document.querySelector(".thank-you-wrapper");
+    thankYouWrapper.style.animation = "submitEffect 150ms linear";
+  }, 2000);
+});
