@@ -80,7 +80,8 @@ if (form) {
     setTimeout(() => {
       formWrapper.style.transform = "translateX(50px)";
       formWrapper.style.opacity = "0";
-    }, 1900);
+    }, 1800);
+
     setTimeout(() => {
       mainWrapper.innerHTML = `
         <div class="thank-you-wrapper">
@@ -101,7 +102,7 @@ if (form) {
         </div>
         `;
       const thankYouWrapper = document.querySelector(".thank-you-wrapper");
-      thankYouWrapper.style.animation = "submitEffect 150ms linear forwards";
+      thankYouWrapper.style.animation = "submitEffect 150ms linear";
     }, 2000);
   });
 }

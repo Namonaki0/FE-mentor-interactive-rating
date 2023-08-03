@@ -10,6 +10,10 @@ $font-size: 15px;
 $font-style: "Overpass", sans-serif;
 $transition-effect: all 150ms linear;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: $font-style;
   color: $text-color;
@@ -21,20 +25,23 @@ body {
   background: black;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .main-wrapper {
-//   overflow: hidden;
+  overflow: hidden;
+  width: 320px;
+  height: 350px;
   border-radius: 10px;
   background: linear-gradient(hsl(214, 19%, 17%), hsl(215, 50%, 9%));
+
+      @media (min-width: 1440px) {
+      & {
+        border-radius: 22px;
+      }
+    }
 
   // USER FORM
   form,
   .thank-you-wrapper {
-    padding: 1.2rem;
-    width: 350px;
+    padding: 1.5rem 1.3rem .5rem;
     border-radius: 10px;
     transition: $transition-effect;
 
@@ -51,7 +58,7 @@ body {
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
 
       img {
         width: 15px;
@@ -118,7 +125,7 @@ body {
       color: $text-color;
       background: $highlight;
       border-radius: 25px;
-      height: 2rem;
+      height: 2.5rem;
       transition: $transition-effect;
       margin-bottom: 0.5rem;
 
@@ -148,7 +155,6 @@ body {
   // THANK YOU SCREEN
   .thank-you-wrapper {
     text-align: center;
-    padding-bottom: 0;
 
     .thank-you-image-wrapper {
       width: 50%;
@@ -173,7 +179,13 @@ body {
       align-items: center;
       width: max-content;
       margin: auto;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
+
+         @media (min-width: 1440px) {
+        & {
+          margin-bottom: 1.9rem;
+        }
+      }
     }
 
     h2 {
@@ -183,6 +195,13 @@ body {
     .text {
       font-size: 14px;
       line-height: 20px;
+      margin-bottom: 0;
+
+      @media (min-width: 1440px) {
+        & {
+          font-size: 13px;
+        }
+      }
     }
 
     @keyframes submitEffect {
